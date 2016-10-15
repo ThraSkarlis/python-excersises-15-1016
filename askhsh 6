@@ -1,0 +1,37 @@
+import copy
+
+''''Excercise 6, Skarlis Thrasyvoulos,P15127'''
+a=raw_input("give ma a string")
+x=list(a)
+'''we add a spce in the end so that it will work for the last word as well'''
+x.append(' ')
+y=[]
+g=0
+i=0
+word=0
+'''this fuction rotates a list to the right by n '''
+def rotate(l,n):
+    return l[-n]+l[:-n]
+'''we only copy them so that our lists have the same size'''
+y=[]
+z=[]
+for i in range(len(x)):
+    '''we initiate y based on when we are every time,like creating a list with each word'''
+    y.insert(g,x[i])
+    g=g+1
+    '''We enter if statement when we finish with a world 1st,2nd,ect'''
+    if(x[i]==" "):
+        g=0
+        y.remove(' ')
+        rotate(a,1)
+        y.append('a')
+        y.append('r')
+        y.append('g')
+        y.append('h')
+        y.append(' ')
+        z.append(y)
+        word=word+1
+        y=[]
+        continue
+
+print z    
