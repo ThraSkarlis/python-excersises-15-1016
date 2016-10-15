@@ -1,0 +1,93 @@
+'''Excersice 7,Tharsyvoulos Skarlis,P15127,
+basicly we search if a number is a perfect root.
+Ifound the algorithm here: http://burningmath.blogspot.gr/2013/09/how-to-check-if-number-is-perfect-square.html'''
+
+'''I could not finish the last 2 steps'''
+
+
+def digital_sum(n):
+    return sum([int(d) for d in str(n)]) 
+
+def digital_root(n): 
+    result = digital_sum(n) 
+    if result < 10: 
+        return result 
+    else: 
+        return digital_root(result) 
+
+    
+def firststep(int):
+    b=int%10
+    if(b==2 or b==3 or b==7 or b==8):
+        return False
+    else:
+        return True
+
+
+def zeroinend (int):
+    b=int%10
+    c=int%100
+    if(b==0 and c==0):
+        int=int/100
+    else:
+        int=int
+    return int
+
+def last_digit5(int):
+    b=int%10
+    c=int%100
+    if(b==5 and c==2):
+        return True
+    else:
+        return False
+    
+def last_digit6(int):
+    b=int%10
+    c=int%100
+    if(b==6 and (c==1 or c==3 or c==5 or c==7 or c==9)):
+        return True
+    else:
+        return False
+
+def devis_by_4(int):
+    b=int*int
+    if (int%4==0 and b%8==0):
+        return True 
+    else:
+        return False
+
+
+'''one funcion for this step'''
+'''and one more function fore the prime numbers step'''
+
+'''Now the main program'''
+int = input('enter an integer')
+
+def final_function(int):
+    if(firststep(int)==True):
+        zeroinend(int)
+        '''checking digital root'''
+        droot=digital_root(int)
+        if(droot==1 or droot==4 or droot==7 or droot==9):
+            if (last_digit5(int)== True):
+                if (last_digit6(int)==True):
+                    if (devis_by_4(int)==True):
+                        '''the code here is missing'''
+                        '''but we normally would have to more if for the 2 final steps'''
+                        print('the number is a perfect square')
+                    else:
+                        print ('It is not a perfect square')
+                else:
+                    print ('It is not a perfect square')
+            else:
+                print ('It is not a perfect square')
+        else:
+            print ('It is not a perfect square')
+
+
+
+            
+                
+        
+        
+    
