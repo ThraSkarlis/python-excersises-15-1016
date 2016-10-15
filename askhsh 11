@@ -1,0 +1,21 @@
+'''askhsh 11'''
+'''Skarlis Thrasyvoulos,P15127'''
+
+
+x=raw_input("give me a string that consists of NSWE")
+t=input("give me an integer for time")
+a=list(x)
+def synartisi(list,t):
+    
+    
+   
+    if (t==len(a)):
+        return True
+    else:
+        return False
+    
+
+print synartisi(x,t)
+
+    
+    
